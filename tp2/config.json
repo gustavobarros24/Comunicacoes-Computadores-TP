@@ -1,0 +1,83 @@
+{
+    "tasks": [
+        {
+            "taskID": "t1",
+            "report_frequency": 5,
+            
+            "devices": ["r1", "r2", "r3", "r4", "r5"],
+
+            "measure_cpu": true,
+            "measure_ram": true,
+
+            "device_interfaces": ["eth0"],
+            
+            "iperf_measure_throughput": true,
+            "iperf_measure_jitter": true,
+            "iperf_measure_packet_loss": true,
+            "ping_measure_latency": true,
+
+            "iperf_as_server": true,
+            "iperf_options": null,
+            "ping_options": null,
+
+            "alertflow_cpu_percent": 90,
+            "alertflow_ram_percent": 90,
+            "alertflow_interface_pps": 2000,
+            "alertflow_packetloss_percent": 50,
+            "alertflow_jitter_ms": 10,
+            "alertflow_latency_ms": 90
+        },
+        {
+            "taskID": "t2",
+            "report_frequency": 10,
+            
+            "devices": ["r1", "r2", "r3", "r4", "r5"],
+            "device_interfaces": ["eth0", "eth1"],
+            
+            "measure_cpu": false,
+            "measure_ram": true,
+
+            "iperf_measure_throughput": false,
+            "iperf_measure_jitter": true,
+            "iperf_measure_packet_loss": false,
+            "ping_measure_latency": true,
+
+            "iperf_as_server": false,
+            "iperf_options": "-u -b 10M",
+            "ping_options": "-c 10 -s 64",
+
+            "alertflow_cpu_percent": 1,
+            "alertflow_ram_percent": 1,
+            "alertflow_interface_pps": 0.1,
+            "alertflow_packetloss_percent": 30,
+            "alertflow_jitter_ms": 15,
+            "alertflow_latency_ms": 100
+        },
+        {
+            "taskID": "t3",
+            "report_frequency": 10,
+            
+            "devices": ["r1", "r2", "r3", "r4", "r5"],
+            "device_interfaces": ["eth1"],
+            
+            "measure_cpu": true,
+            "measure_ram": true,
+
+            "iperf_measure_throughput": false,
+            "iperf_measure_jitter": true,
+            "iperf_measure_packet_loss": false,
+            "ping_measure_latency": true,
+
+            "iperf_as_server": false,
+            "iperf_options": "-u -b 10M",
+            "ping_options": "-c 10 -s 64",
+
+            "alertflow_cpu_percent": 1,
+            "alertflow_ram_percent": 1,
+            "alertflow_interface_pps": 0.1,
+            "alertflow_packetloss_percent": 30,
+            "alertflow_jitter_ms": 15,
+            "alertflow_latency_ms": 100
+        }
+    ]
+}
